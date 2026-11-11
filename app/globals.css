@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
+/* OPF official theme — sourced from https://opf.org.pk/ Elementor globals */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand */
+  --opf-primary: #1b422f;
+  --opf-primary-light: #265c37;
+  --opf-primary-mid: #2f6d3d;
+  --opf-primary-soft: #006936;
+  --opf-secondary: #a38e58;
+  --opf-secondary-light: #a5915b;
+  --opf-accent-red: #c1282a;
+  --opf-accent-blue: #3182ce;
+  --opf-chat-green: #86cd91;
+
+  /* Neutrals */
+  --opf-black: #000000;
+  --opf-dark: #111111;
+  --opf-heading: #1b422f;
+  --opf-text: #565872;
+  --opf-text-strong: #222222;
+  --opf-muted: #69727d;
+  --opf-border: #e4e4e4;
+  --opf-surface: #f4f5f8;
+  --opf-surface-soft: #f5f5f5;
+  --opf-white: #ffffff;
+
+  /* App aliases */
+  --background: var(--opf-white);
+  --foreground: var(--opf-text);
+  --primary: var(--opf-primary);
+  --secondary: var(--opf-secondary);
+  --accent: var(--opf-secondary);
+  --muted: var(--opf-surface);
+  --border: var(--opf-border);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-opf-primary: var(--opf-primary);
+  --color-opf-primary-light: var(--opf-primary-light);
+  --color-opf-primary-mid: var(--opf-primary-mid);
+  --color-opf-secondary: var(--opf-secondary);
+  --color-opf-accent-red: var(--opf-accent-red);
+  --color-opf-surface: var(--opf-surface);
+  --color-opf-text: var(--opf-text);
+  --color-opf-muted: var(--opf-muted);
+  --color-opf-border: var(--opf-border);
+  --color-opf-white: var(--opf-white);
+  --font-sans: var(--font-rubik);
+  --font-heading: var(--font-poppins);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-rubik), Rubik, Roboto, Arial, Helvetica, sans-serif;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--opf-heading);
+  font-family: var(--font-poppins), Poppins, Rubik, sans-serif;
+}
+
+.hero-track {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  will-change: transform;
+}
+
+.hero-slide {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  flex: 0 0 100%;
+}
+
